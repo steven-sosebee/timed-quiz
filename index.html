@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <h1 class="display-4">Web Development Quiz</h1>
+        <p class="lead">Click the start button to start the game. 
+            You will have 30 seconds to answer as many questions as you can.  Wrong answers will incur a 5 second penalty.
+        </p>
+        <hr class="my-4">
+        <p>Test your knowledge:</p>
+        <button class="btn btn-primary btn-lg" id="btn-start">Start Game</button>
+      </div>
+      <div class = "card d-none" id="question-area">
+        <div class="card-header">Time left: <span class = "p-2" id="quiz-timer">0</span> Score <span id="score-counter">0</span></div>
+        <question class="card-header" id="question-text"></question>
+        <answer class="answer card-content btn btn-primary" data-correct="false" id="a"></answer>
+        <answer class="answer card-content btn btn-primary" data-correct="false" id="b"></answer>
+        <answer class="answer card-content btn btn-primary" data-correct="false" id="c"></answer>
+        <answer class="answer card-content btn btn-primary" data-correct="false" id="d"></answer>
+      </div>
+</body>
+  
+  
+  
+  <div class="modal fade" id="game-over" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Game Over</h5>
+        </div>
+        <div class="modal-body">
+            <h6>Your score was: <span class="p-2" id="score-counter"></span></h6>
+            <input class="p-2 form-input" id="initials" type="text" minlength="3" maxlength="3"></input>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="enter-score">Enter High Score</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="./Assets/JS/script.js"></script>
+</html>
