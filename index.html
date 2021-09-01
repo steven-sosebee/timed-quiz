@@ -20,34 +20,35 @@
         <p>Test your knowledge:</p>
         <button class="btn btn-primary btn-lg" id="btn-start">Start Game</button>
       </div>
-      <div class = "card d-none" id="question-area">
-        <div class="card-header">Time left: <span class = "p-2" id="quiz-timer">0</span> Score <span id="score-counter">0</span></div>
+      <div class = "card d-none ms-5 col-5 position-relative" id="question-area">
+        <div class="card-header translate-middle">Time left: <span class = "p-2" id="quiz-timer">0</span> Score: <span id="score-counter">0</span></div>
         <question class="card-header" id="question-text"></question>
-        <answer class="answer card-content btn btn-primary" data-correct="false" id="a"></answer>
-        <answer class="answer card-content btn btn-primary" data-correct="false" id="b"></answer>
-        <answer class="answer card-content btn btn-primary" data-correct="false" id="c"></answer>
-        <answer class="answer card-content btn btn-primary" data-correct="false" id="d"></answer>
+        <answer class="answer card-content btn btn-primary m-1" data-correct="false" id="a"></answer>
+        <answer class="answer card-content btn btn-primary m-1" data-correct="false" id="b"></answer>
+        <answer class="answer card-content btn btn-primary m-1" data-correct="false" id="c"></answer>
+        <answer class="answer card-content btn btn-primary m-1" data-correct="false" id="d"></answer>
+      </div>
+      <div class="modal fade" id="game-over" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Game Over</h5>
+            </div>
+            <div class="modal-body">
+                <h6>Your score was: <span class =" id="score-counter"></span></h6>
+                <input class="p-2 form-input" id="initials" type="text" minlength="3" maxlength="3"></input>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="enter-score">Enter High Score</button>
+            </div>
+          </div>
+        </div>
       </div>
 </body>
   
   
   
-  <div class="modal fade" id="game-over" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Game Over</h5>
-        </div>
-        <div class="modal-body">
-            <h6>Your score was: <span class="p-2" id="score-counter"></span></h6>
-            <input class="p-2 form-input" id="initials" type="text" minlength="3" maxlength="3"></input>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="enter-score">Enter High Score</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>

@@ -7,10 +7,11 @@ function retry(){
 
 function init(){
     var storedhighScoresList = JSON.parse(localStorage.getItem("HighScores"));
-    storedhighScoresList.sort(function(a, b){return b - a});
+    // sorts the scores to display in decending order  
+    storedhighScoresList.sort(function(a, b){return b.score - a.score});
+    
     for (var i=0; i<storedhighScoresList.length;i++){;
         var highScoreInitials=storedhighScoresList[i].initials;
-        console.log(highScoreInitials);
         var newHighScore = $("<tr>");
         newHighScore.append(
             $("<td>").text(highScoreInitials),

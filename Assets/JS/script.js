@@ -134,6 +134,7 @@ function timerCountdown(){
         timerEl.html(currentTime);
         if (currentTime<=0){
             clearInterval(timer);
+            scoreEl.html(correctAnswers);
             gameOverEl.modal("show");
         }
     },1000)
@@ -191,7 +192,13 @@ function endGame(){
 
 }
 
-
+gameOverEl.on("show.bs.modal", function(event){
+    var modal=$(this);
+    if(questionNumber===myQuestions.length-1){
+        modal.find(".modal-title").text("You win!");
+    }
+    modal.find("#score-counter").text(correctAnswers);
+})
 startGameEl.on("click", startGame);
 answersEl.on("click", responseChosen);
 enterScoreEl.on("click", endGame);
