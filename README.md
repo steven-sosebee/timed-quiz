@@ -6,6 +6,8 @@ This application uses arrays, and local storage to deliver a series of questions
 
 At the end of the quiz, the player can input their initials to save their score in local storage.  The player can then use the retry button to take the quiz again and try to beat their high score.
 
+[Live version](https://steven-sosebee.github.io/timed-quiz/)
+
 ![Demo](./Assets/quiz-demo.gif)
 
 ## Acceptance Criteria
