@@ -150,8 +150,6 @@ function startGame(event){
 function guessedCorrectly(){
     correctAnswers++;
     scoreEl.html(correctAnswers);
-    console.log(questionNumber);
-    console.log(myQuestions.length);
     if(questionNumber===myQuestions.length-1){
         clearInterval(timer);
         gameOverEl.modal("show");
@@ -166,7 +164,6 @@ function guessedCorrectly(){
 // Processes incorrect answers
 function guessedIncorrectly(event){
     var answerEl=$(event.target);
-    console.log(event.target);
     answerEl.addClass("btn-danger")
     // event.target.attr("class","btn-danger");
     currentTime=currentTime-5;
@@ -194,10 +191,11 @@ function endGame(){
 
 gameOverEl.on("show.bs.modal", function(event){
     var modal=$(this);
+    modal.find("#score-counter").text(correctAnswers);
     if(questionNumber===myQuestions.length-1){
         modal.find(".modal-title").text("You win!");
-    }
-    modal.find("#score-counter").text(correctAnswers);
+    };
+    
 })
 startGameEl.on("click", startGame);
 answersEl.on("click", responseChosen);
@@ -205,7 +203,6 @@ enterScoreEl.on("click", endGame);
 // Initialize the page
 function init(){
    var storedhighScoresList = JSON.parse(localStorage.getItem("HighScores"));
-   console.log(storedhighScoresList);
    if (storedhighScoresList !== null){
        highScoresList=storedhighScoresList;
    }
